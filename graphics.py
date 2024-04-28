@@ -8,12 +8,12 @@ class Window :
         # Create root widget 
         self.__root = Tk()
         # Set title of root widget
-        self.__root.title = ("Maze Solver") 
+        self.__root.title("Maze Solver") 
 
         # Create canvas
         self.__canvas = Canvas(self.__root, bg="white" ,width=width, height=height)
         # Pack the canvas to fill the window and expand if the window is resized
-        self.__canvas.pack(fill='both', expand=1)
+        self.__canvas.pack(fill=BOTH, expand=1)
 
         # Represents if window is running
         self.__is_runnig = False
