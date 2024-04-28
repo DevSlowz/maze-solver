@@ -19,6 +19,11 @@ class window :
         self.is_runnig = False
 
         self.__root.protocol("WM_DELETE_WINDOW", self.close)
+
+
     # Redraw graphics in the window
-    def redraw() :
-        pass
+    def redraw(self) :
+        # update display without processing any other events or callbacks
+        self.root.update_idletasks()
+        # Process all pending events 
+        self.root.update()
