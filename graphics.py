@@ -16,7 +16,7 @@ class window :
         self.canvas.pack(fill='both', expand=1)
 
         # Represents if window is running
-        self.is_runnig = False
+        self.__is_runnig = False
 
         self.__root.protocol("WM_DELETE_WINDOW", self.close)
 
@@ -24,6 +24,16 @@ class window :
     # Redraw graphics in the window
     def redraw(self) :
         # update display without processing any other events or callbacks
-        self.root.update_idletasks()
+        self.__root.update_idletasks()
         # Process all pending events 
-        self.root.update()
+        self.__root.update()
+
+
+    # Set is_running to True
+    def wait_for_close(self):
+        # Indicate window is running
+        self.__is_runnig = True
+
+        # If the window is running draw 
+        if self.__is_runnig :
+            self.redraw()
