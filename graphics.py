@@ -1,6 +1,6 @@
 from tkinter import Tk, BOTH, Canvas
 
-class window :
+class Window :
     def __init__(self, width, height):
         self.width = width
         self.height = height
@@ -13,7 +13,7 @@ class window :
         # Create canvas
         self.__canvas = Canvas(self.__root, bg="white" ,width=width, height=height)
         # Pack the canvas to fill the window and expand if the window is resized
-        self.canvas.pack(fill='both', expand=1)
+        self.__canvas.pack(fill='both', expand=1)
 
         # Represents if window is running
         self.__is_runnig = False
@@ -35,5 +35,13 @@ class window :
         self.__is_runnig = True
 
         # If the window is running draw 
-        if self.__is_runnig :
+        while self.__is_runnig :
             self.redraw()
+        # If it is not open display message    
+        print("window closed...")
+
+
+    # Set running state to False
+    def close(self):
+        self.__is_runnig = False
+
