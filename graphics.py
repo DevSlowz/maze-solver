@@ -16,3 +16,7 @@ class window :
 
         # Represents if window is running
         is_runnig = False
+
+    # Redraw graphics in the window
+    def redraw() :
+        pass
