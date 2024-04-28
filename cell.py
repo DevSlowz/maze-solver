@@ -50,6 +50,14 @@ class Cell :
             # Draw the line on the window
             self._win.draw_line(line)
 
+    # Draw a path between 2 cells
+    def draw_move(self, to_cell, undo=False):
+        if undo == False:
+            # Draw red line
+            pass
+        else:
+            # Draw grey line
+            pass
 
         
         
