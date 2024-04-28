@@ -51,13 +51,28 @@ class Cell :
             self._win.draw_line(line)
 
     # Draw a path between 2 cells
-    def draw_move(self, to_cell, undo=False):
-        if undo == False:
-            # Draw red line
-            pass
-        else:
-            # Draw grey line
-            pass
+def draw_move(self, to_cell, undo=False):
+    # Calculate the center of the current cell
+    half_length = abs(self._x2 - self._x1) // 2
+    x_center = half_length + self._x1
+    y_center = half_length + self._y1
+
+    # Calculate the center of the target cell
+    half_length2 = abs(to_cell._x2 - to_cell._x1) // 2
+    x_center2 = half_length2 + to_cell._x1
+    y_center2 = half_length2 + to_cell._y1
+
+    # Set the fill color to red by default
+    fill_color = "red"
+    # If the undo flag is set, change the fill color to gray
+    if undo:
+        fill_color = "gray"
+
+    # Create a line from the center of the current cell to the center of the target cell
+    line = Line(Point(x_center, y_center), Point(x_center2, y_center2))
+    # Draw the line with the specified fill color
+    self._win.draw_line(line, fill_color)
+
 
         
         
