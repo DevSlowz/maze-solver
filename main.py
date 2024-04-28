@@ -7,7 +7,7 @@ def main():
     point1 = Point(5,10)
     point2 = Point(20,60)
 
-    line = Line(point1.x, point1.y, point2.x, point2.y)
+    line = Line(Point(50, 50), Point(400, 400))
 
     win.draw_line(line, "red")
 
