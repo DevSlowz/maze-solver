@@ -6,17 +6,19 @@ class window :
         self.height = height
 
         # Create root widget 
-        root = Tk()
+        self.__root = Tk()
         # Set title of root widget
-        root.title = ("Maze Solver") 
+        self.__root.title = ("Maze Solver") 
 
         # Create canvas
-        canvas = Canvas()
-        canvas.pack()
+        self.__canvas = Canvas(self.__root, bg="white" ,width=width, height=height)
+        # Pack the canvas to fill the window and expand if the window is resized
+        self.canvas.pack(fill='both', expand=1)
 
         # Represents if window is running
-        is_runnig = False
+        self.is_runnig = False
 
+        self.__root.protocol("WM_DELETE_WINDOW", self.close)
     # Redraw graphics in the window
     def redraw() :
         pass
