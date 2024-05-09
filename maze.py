@@ -158,7 +158,7 @@ class Maze:
         # vist the current cell
         self._cells[i][j].visited = True
 
-        # if we are at the end cell, we are done!
+        # if we are at the end cell, we are done
         if i == self._num_cols - 1 and j == self._num_rows - 1:
             return True
 
