@@ -81,3 +81,25 @@ class Maze:
         self._draw_cell(0, 0)
         self._cells[self._num_cols - 1][self._num_rows - 1].has_bottom_wall = False
         self._draw_cell(self._num_cols - 1, self._num_rows - 1)
+
+
+    def _break_walls_r(self, i, j):
+        self._cells[i][j].visited = True
+
+        while True :
+            # Hold cells that need to be visited
+            to_visit = []
+
+            # above 
+            if i - 1 >= 0 and not self._cells[i - 1][j].visited:
+                to_visit.append(self._cells[i - 1][j])
+            # below 
+            if i + 1 > self._num_rows and not self._cells[i + 1][j].visited:
+                to_visit.append(self._cells[i + 1][j])
+            # left 
+            if j + 1 >= 0 and not self._cells[i][j + 1].visited:
+                to_visit.append(self._cells[i][j - 1])
+            # right 
+            if i + 1 > self._num_cols and not self._cells[i][j + 1].visited:
+                to_visit.append(self._cells[i][j + 1])
+
